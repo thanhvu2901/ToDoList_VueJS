@@ -28,6 +28,7 @@
 import TodoItem from './components/TodoItem'
 import InputField from './components/InputField'
 import Search from './components/Search'
+
 export default {
   name: 'App',
   components: {
@@ -41,7 +42,11 @@ export default {
   },
   computed: {
     todos () {
-      return this.$store.state.todos
+        //console.log(this.$store.state.search);
+  return this.$store.state.todos.filter(item => {
+  return this.$store.state.search.toString().toLowerCase().split(' ').every(v => item.title.toLowerCase().includes(v))})
+      
+      
     }
   },
   methods: {

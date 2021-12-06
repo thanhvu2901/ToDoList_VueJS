@@ -7,6 +7,7 @@ const STORAGE_KEY = 'todoKey'
 
 export default new Vuex.Store({
   state: {
+    search:"",
     todos: JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '[]')
   },
   actions: {
@@ -61,3 +62,4 @@ export default new Vuex.Store({
     }
   ]
 })
+
